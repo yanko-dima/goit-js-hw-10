@@ -1,6 +1,6 @@
 import './css/styles.css';
 import fetchCountries from './js/fetchCountries';
-// import debounce from 'lodash.debounce';
+import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const DEBOUNCE_DELAY = 300;
@@ -13,10 +13,10 @@ const refs = {
 
 const { searchBox, countryList, countryInfo } = refs;
 
-searchBox.addEventListener('input', onInputSearch);
+searchBox.addEventListener('input', debounce(onInputSearch, DEBOUNCE_DELAY));
 
 function onInputSearch(e) {
-    const inputSearch = e.currentTarget.value.trim();
+    const inputSearch = e.target.value.trim();
 
     if(inputSearch === '') {
         countryList.innerHTML = '';
