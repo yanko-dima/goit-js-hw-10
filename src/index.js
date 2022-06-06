@@ -58,7 +58,7 @@ function onMarckupRender(countries) {
                 <li style="font-size: 32px"><img style="padding-right: 8px" src="${flags.svg}" width="40" /> ${name.official}</li>
                 <li>Capital: <span>${capital}</span></li>
                 <li>Population: <span>${population}</span></li>
-                <li>Languages: <span>${Object.values(languages)}</span></li>
+                <li>Languages: <span>${Object.values(languages)}</span></li> 
             </ul>`).join('');
 
         countryList.innerHTML = '';
