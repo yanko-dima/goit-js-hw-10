@@ -1,6 +1,6 @@
 export default function fetchCountries(name) {
 // Feth URL
-const url = `https://restcountries.com/v2/name/${name}?fields=name,capital,population,flags,languages`;
+const url = `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`;
 
 // Fetch Data
 return fetch(url)
@@ -12,4 +12,3 @@ return fetch(url)
         return response.json();
 });
 };
-

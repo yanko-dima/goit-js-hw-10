@@ -44,7 +44,7 @@ function onMarckupRender(countries) {
         const markupList = countries
             .map(({ name, flags }) => 
             `<li>
-            <img style="padding-right: 8px" src="${flags.svg}" width="40" />${name}
+            <img style="padding-right: 8px" src="${flags.svg}" width="40" />${name.official}
             </li>`).join('');
 
         countryList.innerHTML = markupList;
@@ -55,10 +55,10 @@ function onMarckupRender(countries) {
         const markupInfo = countries
             .map(({ name, flags, capital, population, languages }) => 
             `<ul>
-                <li style="font-size: 32px"><img style="padding-right: 8px" src="${flags.svg}" width="40" /> ${name}</li>
+                <li style="font-size: 32px"><img style="padding-right: 8px" src="${flags.svg}" width="40" /> ${name.official}</li>
                 <li>Capital: <span>${capital}</span></li>
                 <li>Population: <span>${population}</span></li>
-                <li>Languages: <span>${languages[0].name}</span></li>
+                <li>Languages: <span>${Object.values(languages)}</span></li>
             </ul>`).join('');
 
         countryList.innerHTML = '';
